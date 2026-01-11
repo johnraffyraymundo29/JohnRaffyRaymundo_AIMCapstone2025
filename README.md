@@ -1,125 +1,128 @@
-**Predicting 30-Day Hospital Readmission Risk Using Machine Learning**
-**Project Overview**
+# Predicting 30-Day Hospital Readmissions Using Machine Learning
 
-Unplanned hospital readmissions within 30 days of discharge are a significant
-challenge for healthcare systems worldwide. They are associated with increased
-healthcare costs, hospital congestion, and poorer patient outcomes. In the
-Philippine healthcare context, where public hospitals often operate under
-constrained resources, reducing avoidable readmissions is particularly important.
-
-This capstone project applies an end-to-end machine learning lifecycle to predict
-the likelihood of 30-day hospital readmission using patient-level clinical and
-administrative data. The objective is to support targeted post-discharge
-interventions by identifying high-risk patients who may benefit from additional
-follow-up, education, or care coordination.
-
-This project was completed as part of the AI & Machine Learning (AIM) Programme
-and follows industry-aligned best practices in data science, reproducibility, and
-ethical AI.
+**Author:** John Raffy Raymundo  
+**Program:** AI & Machine Learning Capstone  
+**Year:** 2025
 
 ---
 
-**Business Problem**
+## Project Overview
+Hospital readmissions within 30 days of discharge are costly, disruptive, and often preventable.  
+This project develops an interpretable and ethically evaluated machine learning model to predict the risk of 30-day hospital readmission at the point of discharge. The goal is to support proactive clinical interventions, improve patient outcomes, and reduce avoidable healthcare costs.
 
-Hospitals face increasing pressure to optimise bed utilisation while maintaining
-quality of care. High readmission rates may indicate gaps in discharge planning,
-medication adherence, or access to follow-up care.
-
-From an operational and business perspective, accurately identifying patients at
-high risk of readmission can:
-
-- Reduce avoidable healthcare costs
-- Improve patient outcomes and continuity of care
-- Support data-driven clinical and operational decision-making
-- Improve hospital performance metrics and resource allocation
+The solution follows the full machine learning lifecycle, from problem framing and data understanding to model development, explainability, fairness assessment, and responsible deployment considerations.
 
 ---
 
-**Data Science Problem**
+## Business Problem
+Unplanned hospital readmissions increase operational costs, trigger payer penalties, and negatively impact patient outcomes and satisfaction. Many readmissions could be reduced through targeted post-discharge interventions if high-risk patients were identified earlier.
 
-The data science task is formulated as a supervised binary classification
-problem:
+This project addresses the problem by building a predictive model that:
+- Identifies patients at high risk of readmission before discharge  
+- Supports clinical decision-making (not replacement)  
+- Enables more efficient allocation of care resources  
 
-**Can we predict whether a patient will be readmitted within 30 days of
-discharge based on available clinical, demographic, and healthcare utilisation
-data?**
-
-Multiple machine learning models are trained and evaluated, with careful
-consideration of class imbalance, model explainability, and ethical implications.
 ---
-**Project Structure Structure**
-The repository is organised following open-source and industry best practices:
-├.
-├── data/                      # Raw reference data and documentation
-├── notebooks/                 # Step-by-step analysis notebooks (01–05)
-├── src/                       # Reusable Python utilities
-├── models/                    # Trained model artifacts
-├── outputs/                   # Processed datasets and saved features
-├── docs/                      # Explainability and fairness outputs
-├── README.md                  # Project overview (this file)
-├── requirements.txt           # Python dependencies
-└── LICENSE
 
+## Dataset
+The dataset consists of structured healthcare data available at or before patient discharge. It includes multiple feature categories such as:
+- Patient demographics  
+- Prior healthcare utilization  
+- Clinical conditions and comorbidities  
 
-**Methodology & Notebook Guide**
+The target variable indicates whether a patient is readmitted within 30 days of discharge.  
+Strict care was taken to prevent data leakage by excluding any post-discharge information from model inputs.
 
-The project follows the complete machine learning lifecycle:
+---
 
-1. Problem Framing & Data Understanding
-Notebook 01 – Business context, prediction objective, dataset overview, and
-data dictionary
+## Methodology & Notebook Guide
+This project follows the complete machine learning lifecycle and is organized into five structured and reproducible notebooks:
 
-2. Data Cleaning & Feature Engineering
-Notebook 02 – Target engineering, leakage prevention, preprocessing pipeline,
-and train/test split
+### 1. Problem Framing & Data Understanding  
+**Notebook 01**  
+Defines the business context and prediction objective, provides a dataset overview, and documents feature categories and the data dictionary.
 
-3. Exploratory Analysis & Feature Diagnostics
-Notebook 03 – Applied EDA, feature relevance screening, correlation analysis,
-and dimensionality reduction
+### 2. Data Cleaning & Feature Engineering  
+**Notebook 02**  
+Covers target construction, leakage prevention strategies, preprocessing pipelines, and leakage-safe train/test splitting.
 
-4. Model Development & Evaluation
-Notebook 04 – Baseline and advanced models, performance comparison, threshold
-selection, and final model selection
+### 3. Exploratory Analysis & Feature Diagnostics  
+**Notebook 03**  
+Includes applied exploratory data analysis (EDA), feature relevance screening, correlation analysis, and dimensionality reduction techniques to diagnose feature quality and redundancy.
 
-5. Explainability, Fairness & Ethical Analysis
-Notebook 05 – Global and local explainability, fairness assessment by subgroup,
-ethical risks, and mitigation strategies
+### 4. Model Development & Evaluation  
+**Notebook 04**  
+Implements baseline and advanced machine learning models, compares performance across multiple metrics, performs threshold tuning, and selects the final model based on both technical and clinical considerations.
 
-**Evaluation Metrics**
+### 5. Explainability, Fairness & Ethical Analysis  
+**Notebook 05**  
+Applies global and local explainability techniques, conducts fairness assessments across clinically meaningful subgroups, and discusses ethical risks, limitations, and mitigation strategies.
 
-Model performance is evaluated using metrics appropriate for imbalanced healthcare
-data:
+---
 
-- Area Under the ROC Curve (AUC)
-- Precision, Recall, and F1-score
-- Confusion matrix analysis
+## Model Development & Evaluation
+Multiple classification models were implemented and evaluated to balance predictive performance and interpretability, including baseline and more advanced approaches.
 
-Recall is prioritised due to the higher clinical and ethical cost associated with
-failing to identify high-risk patients.
+### Evaluation Metrics
+Given the imbalanced nature of healthcare readmission data, model performance was evaluated using:
+- Area Under the ROC Curve (ROC-AUC)  
+- Precision, Recall, and F1-score  
+- Confusion matrix analysis  
 
-**Ethical Considerations**
+**Recall is prioritised** due to the higher clinical and ethical cost associated with failing to identify high-risk patients who may benefit from early intervention.
 
-Healthcare machine learning models must be interpretable, fair, and used
-responsibly. This project explicitly addresses:
+---
 
-Model explainability using global and local interpretation methods
+## Explainability, Fairness & Ethical AI
+Healthcare machine learning systems must be interpretable, fair, and responsibly deployed. This project explicitly addresses:
 
-Fairness assessment across clinically meaningful subgroups
+- Model explainability using both global and local interpretation methods  
+- Fairness assessment across clinically meaningful demographic subgroups  
+- Discussion of model limitations, bias risks, and ethical deployment considerations  
 
-Discussion of limitations, bias risks, and ethical deployment considerations
+The model is designed strictly as a **decision-support tool** and does **not replace clinical judgment**.
 
-The model is intended as a decision-support tool and does not replace clinical
-judgment.
+---
 
-**Reproducibility Notes**
+## Use of Generative AI
+Generative AI tools (large language models) were used as assistive support for problem framing, exploratory analysis planning, code drafting and refactoring, explainability and fairness write-ups, and presentation preparation. All analytical decisions and outputs were reviewed and validated by the author.
 
-All analysis is conducted using leakage-safe train/test splits.
-Each notebook can be run independently, provided required artifacts from previous
-steps are available. When using Google Colab, Google Drive must be mounted to
-access saved datasets and models.
+👉 Full documentation, including examples and prompts:  
+**[docs/generative_ai_usage.md](docs/generative_ai_usage.md)**
 
-**Author**
+---
 
-John Raffy Raymundo
-AI & Machine Learning Student, AIM
-Capstone Project – 2025
+## Demo Video
+A short demo video provides a walkthrough of the business problem, data pipeline, modeling approach, explainability and fairness analysis, and overall project impact.
+
+Link: *(add video link here)*
+
+---
+
+## Repository Structure / How to Run
+├── notebooks/
+│ ├── 01_problem_framing_data_understanding.ipynb
+│ ├── 02_data_cleaning_feature_engineering.ipynb
+│ ├── 03_eda_feature_selection_dimensionality_reduction.ipynb
+│ ├── 04_model_development_evaluation_selection.ipynb
+│ └── 05_explainability_fairness_analysis.ipynb
+├── data/
+├── models/
+├── outputs/
+├── docs/
+│ └── generative_ai_usage.md
+├── requirements.txt
+└── README.md
+---
+
+## Reproducibility Notes
+- All analysis is conducted using leakage-safe train/test splits.  
+- Each notebook can be run independently, provided required artifacts from earlier steps are available.  
+- When using Google Colab, Google Drive must be mounted to access saved datasets and trained models.
+
+---
+
+## References
+- Relevant academic literature on hospital readmissions  
+- Ethical AI and fairness references  
+- Dataset documentation and sources  
