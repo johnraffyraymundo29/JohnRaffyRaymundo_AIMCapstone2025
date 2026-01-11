@@ -107,8 +107,11 @@ Link: *(add video link here)*
 │ ├── 04_model_development_evaluation_selection.ipynb
 │ └── 05_explainability_fairness_analysis.ipynb
 ├── data/
+│ └── (raw and/or processed datasets, subject to availability)
 ├── models/
+│ └── (saved model artifacts)
 ├── outputs/
+│ └── (figures, evaluation outputs, and reports)
 ├── docs/
 │ └── generative_ai_usage.md
 ├── requirements.txt
