@@ -99,26 +99,40 @@ Link: *(add video link here)*
 
 ---
 
-## Repository Structure / How to Run
+### Repository Structure / How to Run
 
-
-
+```
 ├── notebooks/
-│ ├── 01_problem_framing_data_understanding.ipynb
-│ ├── 02_data_cleaning_feature_engineering.ipynb
-│ ├── 03_eda_feature_selection_dimensionality_reduction.ipynb
-│ ├── 04_model_development_evaluation_selection.ipynb
-│ └── 05_explainability_fairness_analysis.ipynb
+│   ├── 01_problem_framing_data_understanding.ipynb
+│   ├── 02_data_cleaning_feature_engineering.ipynb
+│   ├── 03_eda_feature_selection_dimensionality_reduction.ipynb
+│   ├── 04_model_development_evaluation_selection.ipynb
+│   └── 05_explainability_fairness_analysis.ipynb
 ├── data/
-│ └── (raw and/or processed datasets, subject to availability)
+│   └── (raw and/or processed datasets, subject to availability)
 ├── models/
-│ └── (saved model artifacts)
+│   └── (saved model artifacts)
 ├── outputs/
-│ └── (figures, evaluation outputs, and reports)
+│   └── (figures, evaluation outputs, and reports)
 ├── docs/
-│ └── generative_ai_usage.md
+│   └── generative_ai_usage.md
 ├── requirements.txt
 └── README.md
+```
+
+### How to Run
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd <repository-name>
+   ```
+
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. Run the notebooks sequentially from `01` to `05`.
 
 ---
 
