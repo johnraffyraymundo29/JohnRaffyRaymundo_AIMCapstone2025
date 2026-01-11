@@ -100,6 +100,9 @@ Link: *(add video link here)*
 ---
 
 ## Repository Structure / How to Run
+
+
+
 ├── notebooks/
 │ ├── 01_problem_framing_data_understanding.ipynb
 │ ├── 02_data_cleaning_feature_engineering.ipynb
@@ -116,6 +119,7 @@ Link: *(add video link here)*
 │ └── generative_ai_usage.md
 ├── requirements.txt
 └── README.md
+
 ---
 
 ## Reproducibility Notes
