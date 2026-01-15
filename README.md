@@ -95,7 +95,7 @@ Generative AI tools (large language models) were used as assistive support for p
 ## Demo Video
 A short demo video provides a walkthrough of the business problem, data pipeline, modeling approach, explainability and fairness analysis, and overall project impact.
 
-Link: *(add video link here)*
+Link: https://drive.google.com/file/d/1OFOPJRJNNeOeVOXLCyivei1xU47bvtJD/view
 
 ---
 
